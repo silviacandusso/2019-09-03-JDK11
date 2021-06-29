@@ -94,6 +94,10 @@ public class FoodController {
     	txtResult.appendText("Cerco porzioni correlate...\n");
     	Set<DefaultWeightedEdge> result= model.getConnessi(tipo);
     	txtResult.appendText("Tipi di porzioni correlate a "+tipo+"\n");
+    	if(result==null || result.isEmpty()) {
+    		txtResult.appendText("Non ci sono tipi di porzioni correlate a "+tipo);
+    		return;
+    	}
     	for(DefaultWeightedEdge de: result) {
     		txtResult.appendText(Graphs.getOppositeVertex(model.grafo, de,tipo)+" con peso "+model.grafo.getEdgeWeight(de)+"\n");
     	}
@@ -123,6 +127,7 @@ public class FoodController {
     	this.boxPorzioni.getItems().clear();
     	this.boxPorzioni.getItems().addAll(model.getPorzioni());
     	this.btnCorrelate.setDisable(false);
+    	txtResult.appendText("#VERTICI: "+model.getVertici()+"\n#ARCHI: "+model.getArchi());
     	
     }
 

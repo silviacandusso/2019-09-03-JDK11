@@ -35,6 +35,12 @@ public class Model {
 		}
 		
 	}
+	public int getVertici() {
+		return this.grafo.vertexSet().size();
+	}
+	public int getArchi() {
+		return this.grafo.edgeSet().size();
+	}
 	
 	public List<String> getPorzioni(){
 		return vertici;
