@@ -70,8 +70,8 @@ public class Model {
 			if(getPeso(parziale)>pesoMax) {
 				camminoMax= new ArrayList<String>(parziale);
 				pesoMax=getPeso(parziale);
-				return;
 			}
+			return;
 		}
 		    //2 finisco i vertici
 		if(parziale.size()==grafo.vertexSet().size() && parziale.size()-1<n) {
